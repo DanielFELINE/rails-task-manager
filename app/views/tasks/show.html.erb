@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between">
+  <h1><%= @task.title %></h1>
+  <%= link_to edit_path(@task['id']) do %>
+    <button type="button" class="btn btn-light"><i class="fas fa-pencil-alt">  edit</i></button>
+  <% end %>
+</div>
+<br>
+<div class="rounded p-4 bg-secondary text-white">
+  <p><%= @task.details %></p>
+</div>
+<div class="p-4">
+  <% if @task.completed %>
+    <p><i class="far fa-check-square"></i> task completed</p>
+  <% else %>
+  <p><i class="far fa-square"></i> not completed yet</p>
+  <% end %>
+</div>
+<p><%= link_to "Back to list", tasks_path %></p>
